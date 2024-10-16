@@ -18,13 +18,16 @@ function calculateNote(event) {
     let result1 = ((data1 * 0.3) + (data2 * 0.3) + (data3 * 0.4)).toFixed(1);
 
     if (result1 < 3.5) {
-        result.style.color = 'red';
+        result.style.color = 'black';
         result.textContent = `${userName}, perdiste la materia. Nota final: ${result1}`;
-    } else if (result1 >= 3.5 && result1 <= 5) {
-        result.style.color = 'green';
-        result.textContent = `${userName}, ganaste la materia. Nota final: ${result1}`;
-    } else {
+    } else if (result1 >= 3.5 && result1 <=4.5) {
         result.style.color = 'orange';
+        result.textContent = `${userName}, ganaste la materia. Nota final: ${result1}`;
+    } else if (result1 > 4.5) {
+        result.style.color = 'green';
+        result.textContent = `${userName}, su  nota es sobresaliente. Nota final ${result1}`;
+    }else {
+        result.style.color = 'red';
         result.textContent = `${userName}, la nota ingresada es invÃ¡lida.`;
     }
 }
